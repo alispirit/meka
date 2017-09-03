@@ -1,0 +1,7 @@
+mvn clean install
+mvn -f release.xml package
+cp -r data target
+cp -r lib target
+cp -f target/meka-* target/lib/
+ 
+

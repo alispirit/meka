@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: nz.ac.waikato.cms.weka:weka-dev:test-jar:tests:3.7.12">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/ac/waikato/cms/weka/weka-dev/3.7.12/weka-dev-3.7.12-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/ac/waikato/cms/weka/weka-dev/3.7.12/weka-dev-3.7.12-test-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/nz/ac/waikato/cms/weka/weka-dev/3.7.12/weka-dev-3.7.12-test-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
