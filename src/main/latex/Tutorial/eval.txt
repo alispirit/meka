@@ -1,3 +1,6 @@
+number of instances is : 0
+number of attr is : 72
+number of class is : 0
 == Evaluation Info
 
 Classifier                     meka.classifiers.multilabel.BR
@@ -25,9 +28,9 @@ Number of training instances   355
 Number of test instances       237
 Label cardinality (train set)  1.789
 Label cardinality (test set)   1.992
-Build Time                     0.212
+Build Time                     0.436
 Test Time                      0.094
-Total Time                     0.306
+Total Time                     0.53 
 
 
 

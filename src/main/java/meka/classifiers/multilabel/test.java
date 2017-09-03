@@ -1,95 +1,70 @@
 package meka.classifiers.multilabel;
 
+import meka.core.MLUtils;
+import meka.core.MultiLabelDrawable;
+import meka.core.SystemInfo;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.Drawable;
-import meka.core.MultiLabelDrawable;
-import meka.core.MLUtils;
-import weka.core.RevisionUtils;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Map;
 
-import meka.classifiers.multilabel.hierarchy.* ;
 /**
- * Created by alireza on 4/28/17.
+ * Created by alireza on 8/18/17.
  */
 
-public class test extends ProblemTransformationMethod {
-//    public ArrayList<Link> hrr;
-    public static ArrayList<Link> hierarchical(){
-        hierarchy obj = new hierarchy();
-        return obj.get_hierarchy();
+public class test extends ProblemTransformationMethod implements MultiLabelDrawable {
+    protected Classifier m_MultiClassifiers[] = null;
+    protected Instances m_InstancesTemplates[] = null;
+
+    @Override
+    public Map<Integer, Integer> graphType() {
+        return null;
     }
 
+    @Override
+    public Map<Integer, String> graph() throws Exception {
+        return null;
+    }
 
-
+    @Override
     public void buildClassifier(Instances D) throws Exception {
-
         testCapabilities(D);
+
         int L = D.classIndex();
-        m_Classifier.buildClassifier(D);
-        if (getDebug()) System.out.print("Creating " + L + " models (" + m_Classifier.getClass().getName() + "): ");
 
-//        m_MultiClassifiers = AbstractClassifier.makeCopies(m_Classifier,L);
-//        m_InstancesTemplates = new Instances[L];
-//        structure strc = new structure();
+        if(getDebug()) System.out.print("Creating "+L+" models ("+m_Classifier.getClass().getName()+"): ");
+        m_MultiClassifiers = AbstractClassifier.makeCopies(m_Classifier,L);
+        m_InstancesTemplates = new Instances[L];
 
-        System.out.println("=======hierarchical stracture======");
-        ArrayList<Link> hrr = hierarchical();
-        for (Link node : hrr) {
-            System.out.println("data node = " + node.data);
-            System.out.println("data minheight = " + node.mindepth());
-            System.out.println("data maxheight = " + node.maxdepth());
-            System.out.println("--------------");
+        for(int j = 0; j < L; j++) {
+
+            //Select only class attribute 'j'
+            Instances D_j = MLUtils.keepAttributesAt(new Instances(D),new int[]{j},L);
+            D_j.setClassIndex(0);
+            String str = new String();
+            str = MLUtils.toDebugString(new Instances(D));
+            System.out.print(  str  );
+
+
+            //Build the classifier for that class
+            m_MultiClassifiers[j].buildClassifier(D_j);
+            if(getDebug()) System.out.print(" " + (D_j.classAttribute().name()));
+
+            m_InstancesTemplates[j] = new Instances(D_j, 0);
         }
 
-        System.out.println("=======build classifier======");
-
-        for(int j = 0; j < hrr.size(); j++) {
-            System.out.println(hrr.size());
-        }
-
-
-
-    }
-    public static void main(String[] args) {
-//        structure strc = new structure();
-//        System.out.println("=======hierarchical stracture======");
-//        ArrayList<Link> hrr = hierarchical();
-//        for( Link node : hrr ){
-//            System.out.println("data node = "+ node.data);
-//            System.out.println("data minheight = "+ node.mindepth());
-//            System.out.println("data maxheight = "+ node.maxdepth());
-//            System.out.println("--------------");
-
-//        }
-        System.out.println("main function aaaaa");
-
-
+        System.out.println("------------------------");
     }
 
-    public double[] distributionForInstance(Instance x) throws Exception {
-
-            int L = x.classIndex();
-
-            double y[] = new double[L];
-
-//            for (int j = 0; j < L; j++) {
-//                Instance x_j = (Instance)x.copy();
-//                x_j.setDataset(null);
-//                x_j = MLUtils.keepAttributesAt(x_j,new int[]{j},L);
-//                x_j.setDataset(m_InstancesTemplates[j]);
-//                //y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
-//                y[j] = m_MultiClassifiers[j].distributionForInstance(x_j)[1];
-//            }
-
-            return y;
+    @Override
+    public double[] distributionForInstance(Instance i) throws Exception {
+        return new double[0];
     }
 
+    public static void main(String args[]) {
 
+    }
 
 }

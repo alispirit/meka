@@ -76,6 +76,7 @@ public class BR extends ProblemTransformationMethod implements MultiLabelDrawabl
 
 			m_InstancesTemplates[j] = new Instances(D_j, 0);
 		}
+		System.out.println("number of instances is : " + m_InstancesTemplates[0].numInstances() + "\nnumber of attr is : " +  m_InstancesTemplates[0].numAttributes() + "\nnumber of class is : " +  m_InstancesTemplates[0].classIndex() );
 	}
 
 	@Override
