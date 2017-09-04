@@ -1,348 +1,462 @@
 start hbr
 ************************
-175
+374
 58
 121
 58
 GO0003674 depth : 1
 currntnode : GO0003674
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005575 depth : 1
 currntnode : GO0005575
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0008150 depth : 1
 currntnode : GO0008150
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0003824 depth : 2
 currntnode : GO0003824
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005215 depth : 2
 currntnode : GO0005215
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005488 depth : 2
 currntnode : GO0005488
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0032991 depth : 2
 currntnode : GO0032991
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043226 depth : 2
 currntnode : GO0043226
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044422 depth : 2
 currntnode : GO0044422
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044464 depth : 2
 currntnode : GO0044464
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0008152 depth : 2
 currntnode : GO0008152
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0009987 depth : 2
 currntnode : GO0009987
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0050896 depth : 2
 currntnode : GO0050896
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0051234 depth : 2
 currntnode : GO0051234
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0065007 depth : 2
 currntnode : GO0065007
-175
-175
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0016740 depth : 3
 currntnode : GO0016740
-80
-80
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0016787 depth : 3
 currntnode : GO0016787
-80
-80
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0003676 depth : 3
 currntnode : GO0003676
-43
-43
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005515 depth : 3
 currntnode : GO0005515
-43
-43
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043234 depth : 3
 currntnode : GO0043234
-60
-60
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043227 depth : 3
 currntnode : GO0043227
-91
-91
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043229 depth : 3
 currntnode : GO0043229
-143
-143
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044446 depth : 3
 currntnode : GO0044446
-143
-143
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0016020 depth : 3
 currntnode : GO0016020
-161
-161
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044424 depth : 3
 currntnode : GO0044424
-161
-161
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044425 depth : 3
 currntnode : GO0044425
-161
-161
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0009058 depth : 3
 currntnode : GO0009058
-115
-115
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043170 depth : 3
 currntnode : GO0043170
-115
-115
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044237 depth : 3
 currntnode : GO0044237
-141
-141
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044238 depth : 3
 currntnode : GO0044238
-115
-115
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0016043 depth : 3
 currntnode : GO0016043
-136
-136
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006950 depth : 3
 currntnode : GO0006950
-20
-20
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006810 depth : 3
 currntnode : GO0006810
-36
-36
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0051649 depth : 3
 currntnode : GO0051649
-36
-36
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0050789 depth : 3
 currntnode : GO0050789
-34
-34
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043231 depth : 4
 currntnode : GO0043231
-91
-91
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044428 depth : 4
 currntnode : GO0044428
-71
-71
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005737 depth : 4
 currntnode : GO0005737
-143
-143
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044444 depth : 4
 currntnode : GO0044444
-143
-143
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0019538 depth : 4
 currntnode : GO0019538
-103
-103
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043283 depth : 4
 currntnode : GO0043283
-92
-92
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044260 depth : 4
 currntnode : GO0044260
-112
-112
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006139 depth : 4
 currntnode : GO0006139
-108
-108
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006996 depth : 4
 currntnode : GO0006996
-58
-58
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0046907 depth : 4
 currntnode : GO0046907
-36
-36
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0019222 depth : 4
 currntnode : GO0019222
-30
-30
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0050794 depth : 4
 currntnode : GO0050794
-30
-30
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005634 depth : 5
 currntnode : GO0005634
-88
-88
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0005739 depth : 5
 currntnode : GO0005739
-109
-109
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0044267 depth : 5
 currntnode : GO0044267
-51
-51
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006259 depth : 5
 currntnode : GO0006259
-72
-72
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0016070 depth : 5
 currntnode : GO0016070
-72
-72
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0043412 depth : 5
 currntnode : GO0043412
-65
-65
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0051276 depth : 5
 currntnode : GO0051276
-43
-43
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0031323 depth : 5
 currntnode : GO0031323
-29
-29
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0006464 depth : 6
 currntnode : GO0006464
-51
-51
+after select 64
+after select 0
+before select 121
+before select 58
 58
 
 GO0007001 depth : 6
 currntnode : GO0007001
-26
-26
+after select 64
+after select 0
+before select 121
+before select 58
 58
 

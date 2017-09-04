@@ -83,17 +83,27 @@ public class hbr {
                     }
 //                    System.out.print(+"," );
 
-//                  Select only class attribute 'j'
-                    Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata),new int[]{j},numclass);
-                    D_j.setClassIndex(0);
-                    System.out.println("data for build");
-                    System.out.println(D_j.numInstances());
-                    System.out.println(D_j.numAttributes());
-                    System.out.println(D_j.numClasses());
+
                 }
-                System.out.println(tempdata.numInstances());
+
+                //                  Select only class attribute 'j'
+                Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata),new int[]{i},numclass);
+                D_j.setClassIndex(0);
+
+//                System.out.println("after select "+D_j.numInstances());
+                System.out.println("after select "+D_j.numAttributes());
+//                System.out.println("after select "+D_j.numClasses());
+                System.out.println("after select "+D_j.classIndex());
+
+//                System.out.println("before select "+tempdata.numInstances());
+                System.out.println("before select "+tempdata.numAttributes());
+//                System.out.println("before select "+tempdata.numClasses());
+                System.out.println("before select "+tempdata.classIndex());
+
+
+//                System.out.println(tempdata.numInstances());
                 hdata[i] = tempdata;
-                System.out.println(hdata[i].numInstances());
+//                System.out.println(hdata[i].numInstances());
                 System.out.println(hdata.length);
                 System.out.print("\n");
             }
