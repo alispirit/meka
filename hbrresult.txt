@@ -1,348 +1,348 @@
 start hbr
 ************************
-374
+175
 58
 121
 58
 GO0003674 depth : 1
 currntnode : GO0003674
-374
-374
+175
+175
 58
 
 GO0005575 depth : 1
 currntnode : GO0005575
-374
-374
+175
+175
 58
 
 GO0008150 depth : 1
 currntnode : GO0008150
-374
-374
+175
+175
 58
 
 GO0003824 depth : 2
 currntnode : GO0003824
-374
-374
+175
+175
 58
 
 GO0005215 depth : 2
 currntnode : GO0005215
-374
-374
+175
+175
 58
 
 GO0005488 depth : 2
 currntnode : GO0005488
-374
-374
+175
+175
 58
 
 GO0032991 depth : 2
 currntnode : GO0032991
-374
-374
+175
+175
 58
 
 GO0043226 depth : 2
 currntnode : GO0043226
-374
-374
+175
+175
 58
 
 GO0044422 depth : 2
 currntnode : GO0044422
-374
-374
+175
+175
 58
 
 GO0044464 depth : 2
 currntnode : GO0044464
-374
-374
+175
+175
 58
 
 GO0008152 depth : 2
 currntnode : GO0008152
-374
-374
+175
+175
 58
 
 GO0009987 depth : 2
 currntnode : GO0009987
-374
-374
+175
+175
 58
 
 GO0050896 depth : 2
 currntnode : GO0050896
-374
-374
+175
+175
 58
 
 GO0051234 depth : 2
 currntnode : GO0051234
-374
-374
+175
+175
 58
 
 GO0065007 depth : 2
 currntnode : GO0065007
-374
-374
+175
+175
 58
 
 GO0016740 depth : 3
 currntnode : GO0016740
-164
-164
+80
+80
 58
 
 GO0016787 depth : 3
 currntnode : GO0016787
-164
-164
+80
+80
 58
 
 GO0003676 depth : 3
 currntnode : GO0003676
-87
-87
+43
+43
 58
 
 GO0005515 depth : 3
 currntnode : GO0005515
-87
-87
+43
+43
 58
 
 GO0043234 depth : 3
 currntnode : GO0043234
-123
-123
+60
+60
 58
 
 GO0043227 depth : 3
 currntnode : GO0043227
-191
-191
+91
+91
 58
 
 GO0043229 depth : 3
 currntnode : GO0043229
-307
-307
+143
+143
 58
 
 GO0044446 depth : 3
 currntnode : GO0044446
-307
-307
+143
+143
 58
 
 GO0016020 depth : 3
 currntnode : GO0016020
-347
-347
+161
+161
 58
 
 GO0044424 depth : 3
 currntnode : GO0044424
-347
-347
+161
+161
 58
 
 GO0044425 depth : 3
 currntnode : GO0044425
-347
-347
+161
+161
 58
 
 GO0009058 depth : 3
 currntnode : GO0009058
-236
-236
+115
+115
 58
 
 GO0043170 depth : 3
 currntnode : GO0043170
-236
-236
+115
+115
 58
 
 GO0044237 depth : 3
 currntnode : GO0044237
-298
-298
+141
+141
 58
 
 GO0044238 depth : 3
 currntnode : GO0044238
-236
-236
+115
+115
 58
 
 GO0016043 depth : 3
 currntnode : GO0016043
-289
-289
+136
+136
 58
 
 GO0006950 depth : 3
 currntnode : GO0006950
-53
-53
+20
+20
 58
 
 GO0006810 depth : 3
 currntnode : GO0006810
-75
-75
+36
+36
 58
 
 GO0051649 depth : 3
 currntnode : GO0051649
-75
-75
+36
+36
 58
 
 GO0050789 depth : 3
 currntnode : GO0050789
-70
-70
+34
+34
 58
 
 GO0043231 depth : 4
 currntnode : GO0043231
-191
-191
+91
+91
 58
 
 GO0044428 depth : 4
 currntnode : GO0044428
-161
-161
+71
+71
 58
 
 GO0005737 depth : 4
 currntnode : GO0005737
-307
-307
+143
+143
 58
 
 GO0044444 depth : 4
 currntnode : GO0044444
-307
-307
+143
+143
 58
 
 GO0019538 depth : 4
 currntnode : GO0019538
-214
-214
+103
+103
 58
 
 GO0043283 depth : 4
 currntnode : GO0043283
-184
-184
+92
+92
 58
 
 GO0044260 depth : 4
 currntnode : GO0044260
-229
-229
+112
+112
 58
 
 GO0006139 depth : 4
 currntnode : GO0006139
-222
-222
+108
+108
 58
 
 GO0006996 depth : 4
 currntnode : GO0006996
-121
-121
+58
+58
 58
 
 GO0046907 depth : 4
 currntnode : GO0046907
-73
-73
+36
+36
 58
 
 GO0019222 depth : 4
 currntnode : GO0019222
-61
-61
+30
+30
 58
 
 GO0050794 depth : 4
 currntnode : GO0050794
-61
-61
+30
+30
 58
 
 GO0005634 depth : 5
 currntnode : GO0005634
-179
-179
+88
+88
 58
 
 GO0005739 depth : 5
 currntnode : GO0005739
-230
-230
+109
+109
 58
 
 GO0044267 depth : 5
 currntnode : GO0044267
-102
-102
+51
+51
 58
 
 GO0006259 depth : 5
 currntnode : GO0006259
-138
-138
+72
+72
 58
 
 GO0016070 depth : 5
 currntnode : GO0016070
-138
-138
+72
+72
 58
 
 GO0043412 depth : 5
 currntnode : GO0043412
-127
-127
+65
+65
 58
 
 GO0051276 depth : 5
 currntnode : GO0051276
-85
-85
+43
+43
 58
 
 GO0031323 depth : 5
 currntnode : GO0031323
-59
-59
+29
+29
 58
 
 GO0006464 depth : 6
 currntnode : GO0006464
-102
-102
+51
+51
 58
 
 GO0007001 depth : 6
 currntnode : GO0007001
-50
-50
+26
+26
 58
 
