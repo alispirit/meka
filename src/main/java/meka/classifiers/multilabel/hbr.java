@@ -26,6 +26,7 @@ public class hbr {
 
         String dpath = new String(args[1]);
         String hpath = new String(args[2]);
+        double percentage = Double.parseDouble(args[3]);
 
         String content = new Scanner(new File(hpath)).useDelimiter("\\Z").next();
         String[] parts = content.split(",");
@@ -42,15 +43,27 @@ public class hbr {
         Instances data = ConverterUtils.DataSource.read(dpath);
         MLUtils.prepareData(data);
 
-        int numAttrs = data.numAttributes();
-        int numInstances = data.numInstances();
-        int numclass = data.classIndex();
-        System.out.println(numInstances);
+
+
+//------------split test and tran by persent
+        int trainSize = (int) (data.numInstances() * percentage / 100.0);
+        Instances train = new Instances(data, 0, trainSize);
+        Instances test = new Instances(data, trainSize, data.numInstances() - trainSize);
+//----------------------------------------
+        int numAttrs = train.numAttributes();
+        int numInstances = train.numInstances();
+        int numclass = train.classIndex();
+
+        System.out.println(data.numInstances());
+        System.out.println(train.numInstances());
+        System.out.println(test.numInstances());
         System.out.println(numclass);
         System.out.println(numAttrs);
         System.out.println(dag.size());
 
         Instances[] hdata = new Instances[dag.size()];
+
+
 
         for(int i=1;i<dag.size();i++){// for all nodes
 //        for(int i=1;i<10;i++){// for all nodes
@@ -59,7 +72,7 @@ public class hbr {
             * and add to that instances
             * that have  one or more parrents  class
             * */
-            Instances tempdata = new Instances(data,0);
+            Instances tempdata = new Instances(train,0);
             Links currentnode = dag.get(i);
             if( currentnode.mindepth()>0 ){
                 System.out.println(currentnode.data+" depth : "+currentnode.mindepth());
@@ -69,7 +82,7 @@ public class hbr {
                 for (int j = 0; j < numInstances; j++)// for all instances
                 {
                     boolean validinstance = false;
-                    Instance currentinstance = data.instance(j);
+                    Instance currentinstance = train.instance(j);
                     for(int k=0; k < currentnode.pLink.size();k++ ){
                         int indexofparrent = dag.indexOf(currentnode.pLink.get(k));
 
@@ -90,12 +103,12 @@ public class hbr {
                 Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata),new int[]{i},numclass);
                 D_j.setClassIndex(0);
 
-//                System.out.println("after select "+D_j.numInstances());
+                System.out.println("after select "+D_j.numInstances());
                 System.out.println("after select "+D_j.numAttributes());
 //                System.out.println("after select "+D_j.numClasses());
                 System.out.println("after select "+D_j.classIndex());
 
-//                System.out.println("before select "+tempdata.numInstances());
+                System.out.println("before select "+tempdata.numInstances());
                 System.out.println("before select "+tempdata.numAttributes());
 //                System.out.println("before select "+tempdata.numClasses());
                 System.out.println("before select "+tempdata.classIndex());

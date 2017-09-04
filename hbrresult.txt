@@ -1,461 +1,577 @@
 start hbr
 ************************
 374
+37
+337
 58
 121
 58
 GO0003674 depth : 1
 currntnode : GO0003674
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0005575 depth : 1
 currntnode : GO0005575
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0008150 depth : 1
 currntnode : GO0008150
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0003824 depth : 2
 currntnode : GO0003824
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0005215 depth : 2
 currntnode : GO0005215
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0005488 depth : 2
 currntnode : GO0005488
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0032991 depth : 2
 currntnode : GO0032991
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0043226 depth : 2
 currntnode : GO0043226
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0044422 depth : 2
 currntnode : GO0044422
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0044464 depth : 2
 currntnode : GO0044464
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0008152 depth : 2
 currntnode : GO0008152
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0009987 depth : 2
 currntnode : GO0009987
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0050896 depth : 2
 currntnode : GO0050896
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0051234 depth : 2
 currntnode : GO0051234
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0065007 depth : 2
 currntnode : GO0065007
+after select 37
 after select 64
 after select 0
+before select 37
 before select 121
 before select 58
 58
 
 GO0016740 depth : 3
 currntnode : GO0016740
+after select 20
 after select 64
 after select 0
+before select 20
 before select 121
 before select 58
 58
 
 GO0016787 depth : 3
 currntnode : GO0016787
+after select 20
 after select 64
 after select 0
+before select 20
 before select 121
 before select 58
 58
 
 GO0003676 depth : 3
 currntnode : GO0003676
+after select 7
 after select 64
 after select 0
+before select 7
 before select 121
 before select 58
 58
 
 GO0005515 depth : 3
 currntnode : GO0005515
+after select 7
 after select 64
 after select 0
+before select 7
 before select 121
 before select 58
 58
 
 GO0043234 depth : 3
 currntnode : GO0043234
+after select 18
 after select 64
 after select 0
+before select 18
 before select 121
 before select 58
 58
 
 GO0043227 depth : 3
 currntnode : GO0043227
+after select 21
 after select 64
 after select 0
+before select 21
 before select 121
 before select 58
 58
 
 GO0043229 depth : 3
 currntnode : GO0043229
+after select 33
 after select 64
 after select 0
+before select 33
 before select 121
 before select 58
 58
 
 GO0044446 depth : 3
 currntnode : GO0044446
+after select 33
 after select 64
 after select 0
+before select 33
 before select 121
 before select 58
 58
 
 GO0016020 depth : 3
 currntnode : GO0016020
+after select 35
 after select 64
 after select 0
+before select 35
 before select 121
 before select 58
 58
 
 GO0044424 depth : 3
 currntnode : GO0044424
+after select 35
 after select 64
 after select 0
+before select 35
 before select 121
 before select 58
 58
 
 GO0044425 depth : 3
 currntnode : GO0044425
+after select 35
 after select 64
 after select 0
+before select 35
 before select 121
 before select 58
 58
 
 GO0009058 depth : 3
 currntnode : GO0009058
+after select 30
 after select 64
 after select 0
+before select 30
 before select 121
 before select 58
 58
 
 GO0043170 depth : 3
 currntnode : GO0043170
+after select 30
 after select 64
 after select 0
+before select 30
 before select 121
 before select 58
 58
 
 GO0044237 depth : 3
 currntnode : GO0044237
+after select 33
 after select 64
 after select 0
+before select 33
 before select 121
 before select 58
 58
 
 GO0044238 depth : 3
 currntnode : GO0044238
+after select 30
 after select 64
 after select 0
+before select 30
 before select 121
 before select 58
 58
 
 GO0016043 depth : 3
 currntnode : GO0016043
+after select 31
 after select 64
 after select 0
+before select 31
 before select 121
 before select 58
 58
 
 GO0006950 depth : 3
 currntnode : GO0006950
+after select 4
 after select 64
 after select 0
+before select 4
 before select 121
 before select 58
 58
 
 GO0006810 depth : 3
 currntnode : GO0006810
+after select 5
 after select 64
 after select 0
+before select 5
 before select 121
 before select 58
 58
 
 GO0051649 depth : 3
 currntnode : GO0051649
+after select 5
 after select 64
 after select 0
+before select 5
 before select 121
 before select 58
 58
 
 GO0050789 depth : 3
 currntnode : GO0050789
+after select 9
 after select 64
 after select 0
+before select 9
 before select 121
 before select 58
 58
 
 GO0043231 depth : 4
 currntnode : GO0043231
+after select 21
 after select 64
 after select 0
+before select 21
 before select 121
 before select 58
 58
 
 GO0044428 depth : 4
 currntnode : GO0044428
+after select 23
 after select 64
 after select 0
+before select 23
 before select 121
 before select 58
 58
 
 GO0005737 depth : 4
 currntnode : GO0005737
+after select 33
 after select 64
 after select 0
+before select 33
 before select 121
 before select 58
 58
 
 GO0044444 depth : 4
 currntnode : GO0044444
+after select 33
 after select 64
 after select 0
+before select 33
 before select 121
 before select 58
 58
 
 GO0019538 depth : 4
 currntnode : GO0019538
+after select 27
 after select 64
 after select 0
+before select 27
 before select 121
 before select 58
 58
 
 GO0043283 depth : 4
 currntnode : GO0043283
+after select 23
 after select 64
 after select 0
+before select 23
 before select 121
 before select 58
 58
 
 GO0044260 depth : 4
 currntnode : GO0044260
+after select 28
 after select 64
 after select 0
+before select 28
 before select 121
 before select 58
 58
 
 GO0006139 depth : 4
 currntnode : GO0006139
+after select 28
 after select 64
 after select 0
+before select 28
 before select 121
 before select 58
 58
 
 GO0006996 depth : 4
 currntnode : GO0006996
+after select 14
 after select 64
 after select 0
+before select 14
 before select 121
 before select 58
 58
 
 GO0046907 depth : 4
 currntnode : GO0046907
+after select 5
 after select 64
 after select 0
+before select 5
 before select 121
 before select 58
 58
 
 GO0019222 depth : 4
 currntnode : GO0019222
+after select 9
 after select 64
 after select 0
+before select 9
 before select 121
 before select 58
 58
 
 GO0050794 depth : 4
 currntnode : GO0050794
+after select 9
 after select 64
 after select 0
+before select 9
 before select 121
 before select 58
 58
 
 GO0005634 depth : 5
 currntnode : GO0005634
+after select 21
 after select 64
 after select 0
+before select 21
 before select 121
 before select 58
 58
 
 GO0005739 depth : 5
 currntnode : GO0005739
+after select 25
 after select 64
 after select 0
+before select 25
 before select 121
 before select 58
 58
 
 GO0044267 depth : 5
 currntnode : GO0044267
+after select 11
 after select 64
 after select 0
+before select 11
 before select 121
 before select 58
 58
 
 GO0006259 depth : 5
 currntnode : GO0006259
+after select 20
 after select 64
 after select 0
+before select 20
 before select 121
 before select 58
 58
 
 GO0016070 depth : 5
 currntnode : GO0016070
+after select 20
 after select 64
 after select 0
+before select 20
 before select 121
 before select 58
 58
 
 GO0043412 depth : 5
 currntnode : GO0043412
+after select 18
 after select 64
 after select 0
+before select 18
 before select 121
 before select 58
 58
 
 GO0051276 depth : 5
 currntnode : GO0051276
+after select 13
 after select 64
 after select 0
+before select 13
 before select 121
 before select 58
 58
 
 GO0031323 depth : 5
 currntnode : GO0031323
+after select 9
 after select 64
 after select 0
+before select 9
 before select 121
 before select 58
 58
 
 GO0006464 depth : 6
 currntnode : GO0006464
+after select 12
 after select 64
 after select 0
+before select 12
 before select 121
 before select 58
 58
 
 GO0007001 depth : 6
 currntnode : GO0007001
+after select 8
 after select 64
 after select 0
+before select 8
 before select 121
 before select 58
 58
