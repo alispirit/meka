@@ -1,0 +1,1 @@
+java -cp "./target/lib/*" meka.classifiers.multilabel.test2 -t target/data/Music.arff > result.txt
