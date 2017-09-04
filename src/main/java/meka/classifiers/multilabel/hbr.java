@@ -82,6 +82,14 @@ public class hbr {
                         tempdata.add(currentinstance) ;
                     }
 //                    System.out.print(+"," );
+
+//                  Select only class attribute 'j'
+                    Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata),new int[]{j},numclass);
+                    D_j.setClassIndex(0);
+                    System.out.println("data for build");
+                    System.out.println(D_j.numInstances());
+                    System.out.println(D_j.numAttributes());
+                    System.out.println(D_j.numClasses());
                 }
                 System.out.println(tempdata.numInstances());
                 hdata[i] = tempdata;
