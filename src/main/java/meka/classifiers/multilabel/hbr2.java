@@ -6,6 +6,7 @@ package meka.classifiers.multilabel;
 
 import meka.core.MLUtils;
 import meka.core.MultiLabelDrawable;
+import meka.core.Result;
 import meka.core.SystemInfo;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
@@ -18,6 +19,7 @@ import weka.core.Drawable;
 import weka.core.RevisionUtils;
 import weka.classifiers.SingleClassifierEnhancer;
 import meka.classifiers.multilabel.BR;
+import meka.classifiers.multilabel.Evaluation;
 
 
 import java.io.File;
@@ -28,13 +30,13 @@ import java.util.Scanner;
 import meka.classifiers.multilabel.hierarchical.*;
 
 
-public class hbr {
-    protected static Classifier m_MultiClassifiers[] = null;
-    protected static Instances m_InstancesTemplates[] = null;
-    protected static Classifier m_Classifier = new ZeroR();
+public class hbr2{
+    public static BR m_MultiClassifiers[] = null;
+    public static Instances m_InstancesTemplates[] = null;
+    public static Classifier m_Classifier = new ZeroR();
 
     public static void main(String args[]) throws Exception {
-        System.out.println("start hbr ");
+        System.out.println("start hbr2 ");
 
 
         String dpath = new String(args[1]);
@@ -88,8 +90,8 @@ public class hbr {
         Instances[] hdata = new Instances[dag.size()];
 
 
-        m_MultiClassifiers = AbstractClassifier.makeCopies(m_Classifier, classIndex);
-        m_InstancesTemplates = new Instances[classIndex];
+//        m_MultiClassifiers = AbstractClassifier.makeCopies(m_Classifier, classIndex);
+//        m_InstancesTemplates = new Instances[classIndex];
 
 
 
@@ -126,12 +128,12 @@ public class hbr {
             }
 
             //                  Select only class attribute 'j'
-            Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata), new int[]{i}, classIndex);
-            D_j.setClassIndex(0);
+//            Instances D_j = MLUtils.keepAttributesAt(new Instances(tempdata), new int[]{i}, classIndex);
+//            D_j.setClassIndex(0);
 
-            System.out.println("after select number instances" + D_j.numInstances());
-            System.out.println("after select numbet attr " + D_j.numAttributes());
-            System.out.println("after select classindex" + D_j.classIndex());
+//            System.out.println("after select number instances" + D_j.numInstances());
+//            System.out.println("after select numbet attr " + D_j.numAttributes());
+//            System.out.println("after select classindex" + D_j.classIndex());
 
 
 
@@ -139,13 +141,16 @@ public class hbr {
 //                System.out.println(tempdata.numInstances());
             hdata[i] = tempdata;
 //                System.out.println(hdata[i].numInstances());
-            System.out.println(hdata.length);
             System.out.print("\n");
 
-        }
 
-        for(int i= 0;i<classIndex;i++){
-            m_MultiClassifiers[i].buildClassifier(train);
+            BR classifier = new BR();
+            classifier.buildClassifier(tempdata);
+            String top = "PCut1";
+            String vop = "3";
+            Result result = Evaluation.evaluateModel(classifier, train, test, top, vop);
+
+            System.out.println(result);
         }
 
 

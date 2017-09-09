@@ -1,1 +1,1 @@
-java -cp "./target/lib/*" meka.classifiers.multilabel.hbr -t target/data/derisi/desiri.arff target/data/derisi/hierarchical.txt 10 > hbrresult.txt
+java -cp "./target/lib/*" meka.classifiers.multilabel.hbr3 -t target/data/derisi/desiri.arff target/data/derisi/hierarchical.txt 30 > hbrresult.txt
