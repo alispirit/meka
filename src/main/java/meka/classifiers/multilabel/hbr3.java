@@ -204,12 +204,10 @@ public class hbr3 extends ProblemTransformationMethod {
             double []res = obj.distributionForInstance(currInst);
             System.out.println("\nfor "+instIdx+" instance");
             for(double d: res){
-                System.out.print(d+",");
+                System.out.print((int)d+",");
+
             }
         }
-
-
-
     }
 
 
