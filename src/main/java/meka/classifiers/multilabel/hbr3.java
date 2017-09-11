@@ -2,6 +2,7 @@ package meka.classifiers.multilabel;
 
 import meka.classifiers.multilabel.hierarchical.Links;
 import meka.classifiers.multilabel.hierarchical.dag;
+import meka.classifiers.multilabel.hierarchy.Link;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
 import weka.core.Instance;
@@ -97,14 +98,40 @@ public class hbr3 extends ProblemTransformationMethod {
         int L = x.classIndex();
 
         double y[] = new double[L];
-
         for (int j = 0; j < L; j++) {
-            Instance x_j = (Instance)x.copy();
-            x_j.setDataset(null);
-            x_j = MLUtils.keepAttributesAt(x_j,new int[]{j},L);
-            x_j.setDataset(m_InstancesTemplates[j]);
+            dagobj.get(j).flag=0;
+
+        }
+//        for predict root node root
+//        System.out.println(dagobj.get(0).data);
+        Instance x_j = (Instance)x.copy();
+        x_j.setDataset(null);
+        x_j = MLUtils.keepAttributesAt(x_j,new int[]{0},L);
+        x_j.setDataset(m_InstancesTemplates[0]);
+        //y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
+        y[0] = m_MultiClassifiers[0].distributionForInstance(x_j)[1];
+        dagobj.get(0).flag=1;
+
+        for (int j = 1; j < L; j++) {
+            Links currentnode= dagobj.get(j);
+            int checkpredict = 0;
+            for(int k=0; k < currentnode.pLink.size();k++){
+                int index = dagobj.indexOf( currentnode.pLink.get(k) );
+                if( y[index]==1  ){
+                    checkpredict=1;
+                }
+            }
+            // for return 0/1
+            if(checkpredict==1){
+                y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
+//                y[j] = m_MultiClassifiers[j].distributionForInstance(x_j)[1];
+            }else{
+                y[j]=0;
+            }
+            //  for return num in [0,1]
             //y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
-            y[j] = m_MultiClassifiers[j].distributionForInstance(x_j)[1];
+
+
         }
 
         return y;
@@ -168,6 +195,18 @@ public class hbr3 extends ProblemTransformationMethod {
 
 
         obj.buildClassifier(train);
+//        for (int instIdx = 0; instIdx < numInstances; instIdx++) {
+//        double[] res= new double[dagobj.size()];
+
+        System.out.println("test-----------------------");
+        for (int instIdx = 0; instIdx < 3; instIdx++) {
+            Instance currInst = data.instance(instIdx);
+            double []res = obj.distributionForInstance(currInst);
+            System.out.println("\nfor "+instIdx+" instance");
+            for(double d: res){
+                System.out.print(d+",");
+            }
+        }
 
 
 
