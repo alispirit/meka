@@ -1,3 +1,6 @@
+evaluation
+runClassifier
+runClassifier : else
 number of instances is : 0
 number of attr is : 72
 number of class is : 0
@@ -9,17 +12,17 @@ Additional Info
 Dataset                        Music
 Number of labels (L)           6
 Type                           ML
-Threshold                      0.9974578524138343
+Threshold                      1.0
 Verbosity                      1
 
 
 == Predictive Performance
 
 Number of test instances (N)   
-Accuracy                       0.436
-Jaccard index                  0.436
-Hamming score                  0.745
-Exact match                    0.215
+Accuracy                       0.523
+Jaccard index                  0.523
+Hamming score                  0.726
+Exact match                    0.173
 
 
 == Additional Measurements
@@ -28,9 +31,9 @@ Number of training instances   355
 Number of test instances       237
 Label cardinality (train set)  1.789
 Label cardinality (test set)   1.992
-Build Time                     0.125
-Test Time                      0.057
-Total Time                     0.182
+Build Time                     0.226
+Test Time                      0.119
+Total Time                     0.345
 
 
 

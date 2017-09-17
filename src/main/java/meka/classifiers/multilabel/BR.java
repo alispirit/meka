@@ -91,8 +91,8 @@ public class BR extends ProblemTransformationMethod implements MultiLabelDrawabl
 			x_j.setDataset(null);
 			x_j = MLUtils.keepAttributesAt(x_j,new int[]{j},L);
 			x_j.setDataset(m_InstancesTemplates[j]);
-			//y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
-			y[j] = m_MultiClassifiers[j].distributionForInstance(x_j)[1];
+			y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
+//			y[j] = m_MultiClassifiers[j].distributionForInstance(x_j)[1];
 		}
 
 		return y;

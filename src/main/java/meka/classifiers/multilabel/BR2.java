@@ -154,6 +154,7 @@ public class BR2 extends ProblemTransformationMethod implements MultiLabelDrawab
     }
 
     public static void main(String args[]) {
+        System.out.println("BR2");
         ProblemTransformationMethod.evaluation(new BR2(), args);
     }
 

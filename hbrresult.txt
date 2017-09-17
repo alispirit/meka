@@ -1,7 +1,6 @@
+BR3
 -t
-target/data/derisi/desiri.arff
-target/data/derisi/hierarchical.txt
-30
+target/data/derisi/derisi.arff
 root length : 0
 GO0003674 length : 1
 GO0005575 length : 1
@@ -60,141 +59,43 @@ GO0051276 length : 5
 GO0031323 length : 5
 GO0006464 length : 6
 GO0007001 length : 6
-number of train instances : 52
-number of attributes      : 121
-number of classindex      : 58
-size of dag               : 58
-number of test instances  : 123
---------------------
+evaluation
+runClassifier
+runClassifier : else
 build function-------------------------------
-52
+2231
 121
 58
-loop : 58
-currntnode : root depth : 0
-instance number : 52
-currntnode : GO0003674 depth : 1
-instance number : 52
-currntnode : GO0005575 depth : 1
-instance number : 52
-currntnode : GO0008150 depth : 1
-instance number : 52
-currntnode : GO0003824 depth : 2
-instance number : 52
-currntnode : GO0005215 depth : 2
-instance number : 52
-currntnode : GO0005488 depth : 2
-instance number : 52
-currntnode : GO0032991 depth : 2
-instance number : 52
-currntnode : GO0043226 depth : 2
-instance number : 52
-currntnode : GO0044422 depth : 2
-instance number : 52
-currntnode : GO0044464 depth : 2
-instance number : 52
-currntnode : GO0008152 depth : 2
-instance number : 52
-currntnode : GO0009987 depth : 2
-instance number : 52
-currntnode : GO0050896 depth : 2
-instance number : 52
-currntnode : GO0051234 depth : 2
-instance number : 52
-currntnode : GO0065007 depth : 2
-instance number : 52
-currntnode : GO0016740 depth : 3
-instance number : 28
-currntnode : GO0016787 depth : 3
-instance number : 28
-currntnode : GO0003676 depth : 3
-instance number : 9
-currntnode : GO0005515 depth : 3
-instance number : 9
-currntnode : GO0043234 depth : 3
-instance number : 24
-currntnode : GO0043227 depth : 3
-instance number : 30
-currntnode : GO0043229 depth : 3
-instance number : 47
-currntnode : GO0044446 depth : 3
-instance number : 47
-currntnode : GO0016020 depth : 3
-instance number : 49
-currntnode : GO0044424 depth : 3
-instance number : 49
-currntnode : GO0044425 depth : 3
-instance number : 49
-currntnode : GO0009058 depth : 3
-instance number : 43
-currntnode : GO0043170 depth : 3
-instance number : 43
-currntnode : GO0044237 depth : 3
-instance number : 47
-currntnode : GO0044238 depth : 3
-instance number : 43
-currntnode : GO0016043 depth : 3
-instance number : 45
-currntnode : GO0006950 depth : 3
-instance number : 6
-currntnode : GO0006810 depth : 3
-instance number : 8
-currntnode : GO0051649 depth : 3
-instance number : 8
-currntnode : GO0050789 depth : 3
-instance number : 10
-currntnode : GO0043231 depth : 4
-instance number : 30
-currntnode : GO0044428 depth : 4
-instance number : 29
-currntnode : GO0005737 depth : 4
-instance number : 47
-currntnode : GO0044444 depth : 4
-instance number : 47
-currntnode : GO0019538 depth : 4
-instance number : 38
-currntnode : GO0043283 depth : 4
-instance number : 33
-currntnode : GO0044260 depth : 4
-instance number : 41
-currntnode : GO0006139 depth : 4
-instance number : 41
-currntnode : GO0006996 depth : 4
-instance number : 20
-currntnode : GO0046907 depth : 4
-instance number : 8
-currntnode : GO0019222 depth : 4
-instance number : 10
-currntnode : GO0050794 depth : 4
-instance number : 10
-currntnode : GO0005634 depth : 5
-instance number : 30
-currntnode : GO0005739 depth : 5
-instance number : 35
-currntnode : GO0044267 depth : 5
-instance number : 18
-currntnode : GO0006259 depth : 5
-instance number : 26
-currntnode : GO0016070 depth : 5
-instance number : 26
-currntnode : GO0043412 depth : 5
-instance number : 23
-currntnode : GO0051276 depth : 5
-instance number : 17
-currntnode : GO0031323 depth : 5
-instance number : 10
-currntnode : GO0006464 depth : 6
-instance number : 19
-currntnode : GO0007001 depth : 6
-instance number : 10
-number of instances is : 0
-number of attr is : 64
-number of class is : 0
-test-----------------------
+== Evaluation Info
 
-for 0 instance
-1,1,1,1,1,0,0,0,1,0,1,1,1,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,1,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-for 1 instance
-1,1,1,1,1,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,1,1,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,
-for 2 instance
-1,1,1,1,0,0,1,0,1,0,1,1,1,0,0,0,0,0,1,0,0,1,1,0,0,1,0,0,0,1,1,1,0,0,0,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+Classifier                     meka.classifiers.multilabel.BR3
+Options                        [-W, weka.classifiers.trees.J48, --, -C, 0.25, -M, 2]
+Additional Info                
+Dataset                        derisi0.names 
+Number of labels (L)           58
+Type                           ML
+Threshold                      0.3487372380440623
+Verbosity                      1
+
+
+== Predictive Performance
+
+Number of test instances (N)   
+Accuracy                       0.483
+Jaccard index                  0.483
+Hamming score                  0.766
+Exact match                    0.001
+
+
+== Additional Measurements
+
+Number of training instances   2231
+Number of test instances       1488
+Label cardinality (train set)  19.446
+Label cardinality (test set)   18.774
+Build Time                     8.539
+Test Time                      0.891
+Total Time                     9.43 
+
+
+

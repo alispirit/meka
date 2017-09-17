@@ -1,3 +1,6 @@
+evaluation
+runClassifier
+runClassifier : else
 
 java.lang.Exception: [Error] You did not specify a dataset!
 

@@ -149,6 +149,7 @@ public abstract class ProblemTransformationMethod
 	 * @param	args	Command-line options.
 	 */
 	public static void evaluation(ProblemTransformationMethod h, String args[]) {
+		System.out.println("evaluation");
 		runClassifier(h,args);
 	}
 
@@ -158,7 +159,9 @@ public abstract class ProblemTransformationMethod
 	 * @param	args	Command-line options.
 	 */
 	public static void runClassifier(ProblemTransformationMethod h, String args[]) {
+		System.out.println("runClassifier");
 			if (h instanceof UpdateableClassifier) {
+				System.out.println("runClassifier if");
 				try {
 					IncrementalEvaluation.runExperiment(h,args);
 				} catch(Exception e) {
@@ -168,6 +171,7 @@ public abstract class ProblemTransformationMethod
 				}
 			}
 			else {
+				System.out.println("runClassifier : else");
 				try {
 					Evaluation.runExperiment(h,args);
 				} catch(Exception e) {
