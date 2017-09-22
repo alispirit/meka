@@ -12,7 +12,7 @@ public class dag {
     private static Links first;
     private Links temp = null;
     private Links newLInk;
-    private static ArrayList<Links> linkToNode = new ArrayList<Links>();
+    private ArrayList<Links> linkToNode = new ArrayList<Links>();
 
 
     public dag() {
@@ -175,10 +175,21 @@ public class dag {
     public ArrayList<Links> sortmindepth() {
         int length = linkToNode.size();
         for (int i = 0; i < length - 1; i++)
-            for (int j = 1; j < length - i - 1; j++) {
+            for (int j = 0; j < length - i - 1; j++) {
                 if (linkToNode.get(j).mindepth() > linkToNode.get(j + 1).mindepth())
                     Collections.swap(linkToNode, j, j + 1);
             }
         return linkToNode;
     }
+    //======================================
+    public ArrayList<Links> sortmindepth(ArrayList<Links> nodes) {
+        int length = nodes.size();
+        for (int i = 0; i < length - 1; i++)
+            for (int j = 0; j < length - i - 1; j++) {
+                if (nodes.get(j).mindepth() > nodes.get(j + 1).mindepth())
+                    Collections.swap(nodes, j, j + 1);
+            }
+        return nodes;
+    }
+
 }
