@@ -180,15 +180,66 @@ public class hcc extends ProblemTransformationMethod
 //            nodes[j].build(D, m_Classifier);
 //            pa = A.append(pa,j);
 //        }
-
+        Instances tempdata[]=new Instances[L];
         for(int j=0;j<h_Chain.length;j++){
+            tempdata[j] = new Instances(D, 0);
+            Links currentnode = dagobj.get(j);
+            System.out.println("currntnode : " +currentnode.data + " depth : " + currentnode.mindepth());
+            int mindepth = currentnode.mindepth();
+            int numInstances=D.numInstances();
+
+            if(mindepth<3){
+                tempdata[j] = new Instances(D);
+            }else {
+                for (int k = 0; k < numInstances; k++)// for all instances
+                {
+                    boolean validinstance = false;
+                    Instance currentinstance = D.instance(k);
+                    ArrayList<Links> ancestor=new ArrayList<Links>();
+                    // if father of node equals + add to tempdata
+                    for (int l = 0; l < currentnode.pLink.size(); l++) {
+                        Links father = currentnode.pLink.get(l);
+                        int indexofparrent = dagobj.indexOf(father);
+
+                        //add ancetor to an Arraylist since if father is - check if ancestor
+                        for(int n=0;n<father.pLink.size();n++){
+                            ancestor.add( father.pLink.get(n));
+                        }
+                        String check = currentinstance.stringValue(indexofparrent);
+                        if (check.equals("1")) {
+                            validinstance = true;
+                        }
+                    }
+                    if (validinstance) {
+                        tempdata[j].add(currentinstance);
+                    }else{
+                        //check if ancestor is + add to tempdata
+                        for(int n=0;n<ancestor.size();n++){
+                            Links currentancestor = ancestor.get(n);
+                            int indexofancestor = dagobj.indexOf(currentancestor);
+                            String check = currentinstance.stringValue(indexofancestor);
+                            if (check.equals("1")) {
+                                validinstance = true;
+                            }
+                        }
+                        if (validinstance) {
+                            tempdata[j].add(currentinstance);
+                        }
+
+
+                    }
+
+
+                }
+            }
+
             if (getDebug())
-                System.out.print(" : - :"+D.attribute(j).name());
-            System.out.println("\nnumInstances : "+D.numInstances());
+                System.out.print(" : - :"+tempdata[j].attribute(j).name());
+            System.out.println("\nnumInstances : "+tempdata[j].numInstances());
             nodes[j] = new CNode(j, null, h_Chain[j]);
             System.out.println("");
             System.out.println(j+" - "+Arrays.toString(h_Chain[j]) );
-            nodes[j].build(D, m_Classifier);
+            nodes[j].build(tempdata[j], m_Classifier);
 
         }
         if (getDebug()) System.out.println(" ) -:");
