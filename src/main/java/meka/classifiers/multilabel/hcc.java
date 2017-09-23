@@ -170,16 +170,30 @@ public class hcc extends ProblemTransformationMethod
         nodes = new CNode[L];
         int pa[] = new int[]{};
 
-        for(int j : m_Chain) {
+
+//        for(int j : m_Chain) {
+//            if (getDebug())
+//                System.out.print(" : - :"+D.attribute(j).name());
+//            nodes[j] = new CNode(j, null, pa);
+//            System.out.println("");
+//            System.out.println(j+" - "+Arrays.toString(pa) );
+//            nodes[j].build(D, m_Classifier);
+//            pa = A.append(pa,j);
+//        }
+
+        for(int j=0;j<h_Chain.length;j++){
             if (getDebug())
-                System.out.print(" "+D.attribute(j).name());
-            nodes[j] = new CNode(j, null, pa);
+                System.out.print(" : - :"+D.attribute(j).name());
+            System.out.println("\nnumInstances : "+D.numInstances());
+            nodes[j] = new CNode(j, null, h_Chain[j]);
             System.out.println("");
-            System.out.println(j+" - "+Arrays.toString(pa) );
+            System.out.println(j+" - "+Arrays.toString(h_Chain[j]) );
             nodes[j].build(D, m_Classifier);
-            pa = A.append(pa,j);
+
         }
         if (getDebug()) System.out.println(" ) -:");
+
+
 
         // to store posterior probabilities (confidences)
         confidences = new double[L];
