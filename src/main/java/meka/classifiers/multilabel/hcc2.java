@@ -18,7 +18,6 @@ package meka.classifiers.multilabel;
 import meka.classifiers.multilabel.cc.CNode;
 import meka.classifiers.multilabel.hierarchical.Links;
 import meka.classifiers.multilabel.hierarchical.dag;
-import meka.classifiers.multilabel.hierarchy.Link;
 import meka.core.A;
 import meka.core.MultiLabelDrawable;
 import meka.core.OptionUtils;
@@ -28,7 +27,6 @@ import weka.core.TechnicalInformation.Type;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -44,7 +42,7 @@ import java.util.*;
  * @author	Jesse Read
  * @version December 2013
  */
-public class hcc extends ProblemTransformationMethod
+public class hcc2 extends ProblemTransformationMethod
         implements Randomizable, TechnicalInformationHandler, MultiLabelDrawable {
 
     private static final long serialVersionUID = -4115294965331340629L;
@@ -267,11 +265,30 @@ public class hcc extends ProblemTransformationMethod
 //        for(int j : h_Chain) {
 //        System.out.println("dag size : "+dagobj.size());
 //        System.out.println("chain size : "+h_Chain.length);
-        for(int j=0;j<h_Chain.length;j++){
-            // h_j : x,pa_j -> y_j
-            y[j] = nodes[j].classify((Instance)x.copy(),y);
-        }
 
+        y[0] = nodes[0].classify((Instance)x.copy(),y);
+        dagobj.get(0).flag=1;
+
+        for(int j=1;j<h_Chain.length;j++){
+            // h_j : x,pa_j -> y_j
+            Links currentnode= dagobj.get(j);
+            int checkpredict = 0;
+            for(int k=0; k < currentnode.pLink.size();k++){
+                int index = dagobj.indexOf( currentnode.pLink.get(k) );
+                if( y[index]>0.5  ){
+                    checkpredict=1;
+                }
+            }
+
+            if(checkpredict==1){
+                y[j] = nodes[j].classify((Instance)x.copy(),y);
+            }else{
+                y[j]=0;
+            }
+
+
+        }
+        System.out.println(Arrays.toString(y));
         return y;
     }
 
@@ -558,6 +575,6 @@ public class hcc extends ProblemTransformationMethod
         System.out.println("dag size is :"+dagobj.size());
 
 
-        ProblemTransformationMethod.evaluation(new hcc(), args);
+        ProblemTransformationMethod.evaluation(new hcc2(), args);
     }
 }

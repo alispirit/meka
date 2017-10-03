@@ -1,0 +1,1 @@
+java -cp "./target/sources/*" meka.classifiers.multilabel.BR3 -t ./target/data/derisi/derisi.arff   > ./resault/BR3_result.txt
