@@ -42,7 +42,7 @@ import java.util.*;
  * @author	Jesse Read
  * @version December 2013
  */
-public class hcc2 extends ProblemTransformationMethod
+public class hcctest3 extends ProblemTransformationMethod
         implements Randomizable, TechnicalInformationHandler, MultiLabelDrawable {
 
     private static final long serialVersionUID = -4115294965331340629L;
@@ -71,10 +71,10 @@ public class hcc2 extends ProblemTransformationMethod
         // if has not yet been manually chosen ...
 //        if (chain == null) {
 
-            // create the standard order (1,2,...,L) ..
-            chain = A.make_sequence(L);
+        // create the standard order (1,2,...,L) ..
+        chain = A.make_sequence(L);
 
-            // and shuffle if m_S > 0
+        // and shuffle if m_S > 0
 //            if (m_S != 0) {
 //                m_R = new Random(m_S);
 //                A.shuffle(chain,m_R);
@@ -154,7 +154,8 @@ public class hcc2 extends ProblemTransformationMethod
     @Override
     public void buildClassifier(Instances D) throws Exception {
         testCapabilities(D);
-
+        int numinstances = D.numInstances();
+        System.out.println("size of instances : "+ numinstances);
         int L = D.classIndex();
 
         prepareChain(L);
@@ -179,18 +180,32 @@ public class hcc2 extends ProblemTransformationMethod
 //            pa = A.append(pa,j);
 //        }
         Instances tempdata[]=new Instances[L];
+        int[] truval = new int[h_Chain.length];
+        int[] falval = new int[h_Chain.length];
         for(int j=0;j<h_Chain.length;j++){
+
             tempdata[j] = new Instances(D, 0);
             Links currentnode = dagobj.get(j);
             if(getDebug() )System.out.println("currntnode : " +currentnode.data + " depth : " + currentnode.mindepth());
             int mindepth = currentnode.mindepth();
             int numInstances=D.numInstances();
-
-            if(mindepth<3){
+            truval[j]=0;
+            falval[j]=0;
+            boolean checkvalue ;
+            for (int k = 0; k < numInstances; k++)// for all instances
+            {
+                Instance currentinstance = D.instance(k);
+                checkvalue = currentinstance.stringValue(j).equals("1");
+                if(checkvalue)  //if label value is +
+                    truval[j]++;
+            }
+//            System.out.println("true value is : "+truval[j]);
+            if(mindepth<2){
                 tempdata[j] = new Instances(D);
             }else {
                 for (int k = 0; k < numInstances; k++)// for all instances
                 {
+//                    System.out.println("falval[j] "+falval[j]);
                     boolean validinstance = false;
                     Instance currentinstance = D.instance(k);
                     ArrayList<Links> ancestor=new ArrayList<Links>();
@@ -207,10 +222,23 @@ public class hcc2 extends ProblemTransformationMethod
                         if (check.equals("1")) {
                             validinstance = true;
                         }
+
+
                     }
                     if (validinstance) {
-                        tempdata[j].add(currentinstance);
-                    }else{
+                        checkvalue = currentinstance.stringValue(j).equals("1");
+                        if(!checkvalue) {
+//                            System.out.println("j = "+j+" --- "+falval[j]+"-"+truval[j]);
+                            if(falval[j] < truval[j]){
+                                falval[j] +=1;
+                                tempdata[j].add(currentinstance);
+                            }
+                        }else{
+                            tempdata[j].add(currentinstance);
+                        }
+
+                    }else if(falval[j] < truval[j]){
+//                        System.out.println("ancestor");
                         //check if ancestor is + add to tempdata
                         for(int n=0;n<ancestor.size();n++){
                             Links currentancestor = ancestor.get(n);
@@ -220,15 +248,23 @@ public class hcc2 extends ProblemTransformationMethod
                                 validinstance = true;
                             }
                         }
-                        if (validinstance) {
-                            tempdata[j].add(currentinstance);
+                        if (validinstance ) {
+                            checkvalue = currentinstance.stringValue(j).equals("1");
+                            if(!checkvalue) {
+//                                System.out.println("j = "+j+" --- "+falval[j]+"-"+truval[j]);
+                                if(falval[j] < truval[j]){
+                                    falval[j] +=1;
+                                    tempdata[j].add(currentinstance);
+                                }
+                            }else{
+                                tempdata[j].add(currentinstance);
+                            }
                         }
-
 
                     }
 
 
-                }
+                }//end for instance
             }
 
             if (getDebug())
@@ -237,6 +273,10 @@ public class hcc2 extends ProblemTransformationMethod
             nodes[j] = new CNode(j, null, h_Chain[j]);
             if(getDebug() )System.out.println("");
             if(getDebug() )System.out.println(j+" - "+Arrays.toString(h_Chain[j]) );
+            System.out.println("for node "+j+" number instances is : "+tempdata[j].numInstances());
+            System.out.println("true number is                       "+truval[j]);
+            int fls= tempdata[j].numInstances()-truval[j];
+            System.out.println("false number is                      "+falval[j] );
             nodes[j].build(tempdata[j], m_Classifier);
 
         }
@@ -566,7 +606,7 @@ public class hcc2 extends ProblemTransformationMethod
             hierarchy.add(parts, i, 0);
         }
         ArrayList<Links> dag = hierarchy.getlist();
-//        hbr3 obj = new hbr3();
+//        hcctest3 obj = new hcctest3();
         dagobj = hierarchy.sortmindepth();
 
 //        for(Links a:dag){
@@ -575,7 +615,7 @@ public class hcc2 extends ProblemTransformationMethod
         System.out.println("dag size is :"+dagobj.size());
 
 
-        ProblemTransformationMethod.evaluation(new hcc2(), args);
+        ProblemTransformationMethod.evaluation(new hcctest3(), args);
 //        ProblemTransformationMethod.
 
 //        Evaluation evaluation = new Evaluation(trainInstances);

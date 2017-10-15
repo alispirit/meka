@@ -21,26 +21,26 @@ package meka.classifiers.multilabel;
  * See also <i>BR3</i> from the <a href=http://mulan.sourceforge.net>MULAN</a> framework
  * @author 	Jesse Read (jmr30@cs.waikato.ac.nz)
  */
+
 import meka.classifiers.multilabel.hierarchical.Links;
 import meka.classifiers.multilabel.hierarchical.dag;
+import meka.core.MLUtils;
+import meka.core.MultiLabelDrawable;
 import weka.classifiers.AbstractClassifier;
 import weka.classifiers.Classifier;
+import weka.core.Drawable;
 import weka.core.Instance;
 import weka.core.Instances;
-import weka.core.Drawable;
-import meka.core.MultiLabelDrawable;
-import meka.core.MLUtils;
 import weka.core.RevisionUtils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawable {
+public class HBR2 extends ProblemTransformationMethod implements MultiLabelDrawable {
 
     /** for serialization. */
     private static final long serialVersionUID = -5390512540469007904L;
@@ -48,7 +48,7 @@ public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawab
     protected Classifier m_MultiClassifiers[] = null;
     protected Instances m_InstancesTemplates[] = null;
     protected static ArrayList<Links> dagobj = new ArrayList<>();
-    protected static String hpath = "target/data/derisi/hierarchical.txt";
+    protected static String hpath = "./target/data/datasets_GO/hierarchical.txt";
     /**
      * Description to display in the GUI.
      *
@@ -64,10 +64,10 @@ public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawab
     @Override
     public void buildClassifier(Instances D) throws Exception {
         testCapabilities(D);
-        System.out.println("build function-------------------------------");
-        System.out.println(D.numInstances());
-        System.out.println(D.numAttributes());
-        System.out.println(D.classIndex());
+//        System.out.println("build function-------------------------------");
+//        System.out.println(D.numInstances());
+//        System.out.println(D.numAttributes());
+//        System.out.println(D.classIndex());
 
         int numInstances = D.numInstances();
 
@@ -79,36 +79,36 @@ public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawab
 
 
 
-        System.out.println("loop : "+L);
+//        System.out.println("loop : "+L);
         for(int j = 0; j < L; j++) {
             Instances tempdata = new Instances(D, 0);
             Links currentnode = dagobj.get(j);
-            System.out.println("currntnode : " +currentnode.data + " depth : " + currentnode.mindepth());
-            if(j==0){// if current node is root
-                tempdata = new Instances(D);
-            }else {
-                for (int k = 0; k < numInstances; k++)// for all instances
-                {
-                    boolean validinstance = false;
-                    Instance currentinstance = D.instance(k);
-                    for (int l = 0; l < currentnode.pLink.size(); l++) {
-                        int indexofparrent = dagobj.indexOf(currentnode.pLink.get(l));
-
-                        String temp = currentinstance.stringValue(indexofparrent);
-                        if (temp.equals("1")) {
-                            validinstance = true;
-                        }
-                    }
-                    if (validinstance) {
-                        tempdata.add(currentinstance);
-                    }
-//                    System.out.print(+"," );
-
-
-                }
-            }
-
-            System.out.println("instance number : "+tempdata.numInstances());
+//            System.out.println("currntnode : " +currentnode.data + " depth : " + currentnode.mindepth());
+//            if(j==0){// if current node is root
+//                tempdata = new Instances(D);
+//            }else {
+//                for (int k = 0; k < numInstances; k++)// for all instances
+//                {
+//                    boolean validinstance = false;
+//                    Instance currentinstance = D.instance(k);
+//                    for (int l = 0; l < currentnode.pLink.size(); l++) {
+//                        int indexofparrent = dagobj.indexOf(currentnode.pLink.get(l));
+//
+//                        String temp = currentinstance.stringValue(indexofparrent);
+//                        if (temp.equals("1")) {
+//                            validinstance = true;
+//                        }
+//                    }
+//                    if (validinstance) {
+//                        tempdata.add(currentinstance);
+//                    }
+////                    System.out.print(+"," );
+//
+//
+//                }
+//            }
+            tempdata = new Instances(D);
+//            System.out.println("instance number : "+tempdata.numInstances());
 
 
             //Select only class attribute 'j'
@@ -162,11 +162,11 @@ public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawab
             }
             //  for return num in [0,1]
             //y[j] = m_MultiClassifiers[j].classifyInstance(x_j);
-            System.out.println(y[j]);
+//            System.out.println(y[j]);
         }
 
 
-        System.out.println("===============================================================");
+//        System.out.println("===============================================================");
 
         return y;
     }
@@ -227,30 +227,30 @@ public class BR3 extends ProblemTransformationMethod implements MultiLabelDrawab
     }
 
     public static void main(String args[]) throws IOException {
-        System.out.println("BR3");
+        System.out.println("HBR : hierarchical BR classification");
         String dpath = hpath;
         String content = new Scanner(new File(hpath)).useDelimiter("\\Z").next();
         String[] parts = content.split(",");
         dag hierarchy = new dag();
-        for(String s: args){
-            System.out.println(s);
-        }
+//        for(String s: args){
+//            System.out.println(s);
+//        }
 
 //        create dag and sort by mindepth-------------------------
         for (int i = 0; i < parts.length; i++) {
             hierarchy.add(parts, i, 0);
         }
         ArrayList<Links> dag = hierarchy.getlist();
-        hbr3 obj = new hbr3();
+//        HBR2 obj = new HBR2();
         dagobj = hierarchy.sortmindepth();
 
-        for(Links a:dag){
-            System.out.println(dagobj.indexOf(a)+" - "+a.data +" length : "+a.mindepth());
-        }
-        System.out.println("dag size is :"+dagobj.size());
+//        for(Links a:dag){
+//            System.out.println(dagobj.indexOf(a)+" - "+a.data +" length : "+a.mindepth());
+//        }
+//        System.out.println("dag size is :"+dagobj.size());
 
 
-        ProblemTransformationMethod.evaluation(new BR3(), args);
+        ProblemTransformationMethod.evaluation(new HBR2(), args);
     }
 
 }

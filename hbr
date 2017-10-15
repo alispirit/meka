@@ -1,1 +1,1 @@
-java -cp "./target/sources/*" meka.classifiers.multilabel.BR3 -t ./target/data/derisi/derisi.arff   > ./resault/BR3_result.txt
+java -cp "./target/sources/*" meka.classifiers.multilabel.HBR -t ./target/data/datasets_GO/church_GO*/Folder/church_GO.arff   -verbosity 5    -x 10 > ./resault/church_GO_HBR_result.txt;

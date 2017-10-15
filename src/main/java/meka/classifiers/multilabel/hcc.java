@@ -58,7 +58,7 @@ public class hcc extends ProblemTransformationMethod
     protected int m_Chain[] = null;
     protected int h_Chain[][] = null;//h_Chain[node number][chain contain]
     protected static ArrayList<Links> dagobj = new ArrayList<>();
-    protected static String hpath = "target/data/derisi/hierarchical.txt";
+    protected static String hpath = "./target/data/datasets_GO/hierarchical.txt";
     /**
      * Prepare a Chain. One of the following:<br>
      * - Use pre-set chain. If there is none, then <br>
@@ -549,7 +549,7 @@ public class hcc extends ProblemTransformationMethod
             hierarchy.add(parts, i, 0);
         }
         ArrayList<Links> dag = hierarchy.getlist();
-        hbr3 obj = new hbr3();
+//        hbr3 obj = new hbr3();
         dagobj = hierarchy.sortmindepth();
 
 //        for(Links a:dag){

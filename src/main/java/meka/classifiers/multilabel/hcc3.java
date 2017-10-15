@@ -18,6 +18,7 @@ package meka.classifiers.multilabel;
 import meka.classifiers.multilabel.cc.CNode;
 import meka.classifiers.multilabel.hierarchical.Links;
 import meka.classifiers.multilabel.hierarchical.dag;
+import meka.classifiers.multilabel.hierarchy.Link;
 import meka.core.A;
 import meka.core.MultiLabelDrawable;
 import meka.core.OptionUtils;
@@ -27,6 +28,7 @@ import weka.core.TechnicalInformation.Type;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.*;
 
 /**
@@ -42,7 +44,7 @@ import java.util.*;
  * @author	Jesse Read
  * @version December 2013
  */
-public class hcc2 extends ProblemTransformationMethod
+public class hcc3 extends ProblemTransformationMethod
         implements Randomizable, TechnicalInformationHandler, MultiLabelDrawable {
 
     private static final long serialVersionUID = -4115294965331340629L;
@@ -71,10 +73,10 @@ public class hcc2 extends ProblemTransformationMethod
         // if has not yet been manually chosen ...
 //        if (chain == null) {
 
-            // create the standard order (1,2,...,L) ..
-            chain = A.make_sequence(L);
+        // create the standard order (1,2,...,L) ..
+        chain = A.make_sequence(L);
 
-            // and shuffle if m_S > 0
+        // and shuffle if m_S > 0
 //            if (m_S != 0) {
 //                m_R = new Random(m_S);
 //                A.shuffle(chain,m_R);
@@ -184,48 +186,28 @@ public class hcc2 extends ProblemTransformationMethod
             Links currentnode = dagobj.get(j);
             if(getDebug() )System.out.println("currntnode : " +currentnode.data + " depth : " + currentnode.mindepth());
             int mindepth = currentnode.mindepth();
+            int maxdepth = currentnode.maxdepth();
             int numInstances=D.numInstances();
 
-            if(mindepth<3){
+            if(j==0){// if current node is root
                 tempdata[j] = new Instances(D);
             }else {
                 for (int k = 0; k < numInstances; k++)// for all instances
                 {
                     boolean validinstance = false;
                     Instance currentinstance = D.instance(k);
-                    ArrayList<Links> ancestor=new ArrayList<Links>();
-                    // if father of node equals + add to tempdata
                     for (int l = 0; l < currentnode.pLink.size(); l++) {
-                        Links father = currentnode.pLink.get(l);
-                        int indexofparrent = dagobj.indexOf(father);
+                        int indexofparrent = dagobj.indexOf(currentnode.pLink.get(l));
 
-                        //add ancetor to an Arraylist since if father is - check if ancestor
-                        for(int n=0;n<father.pLink.size();n++){
-                            ancestor.add( father.pLink.get(n));
-                        }
-                        String check = currentinstance.stringValue(indexofparrent);
-                        if (check.equals("1")) {
+                        String temp = currentinstance.stringValue(indexofparrent);
+                        if (temp.equals("1")) {
                             validinstance = true;
                         }
                     }
                     if (validinstance) {
                         tempdata[j].add(currentinstance);
-                    }else{
-                        //check if ancestor is + add to tempdata
-                        for(int n=0;n<ancestor.size();n++){
-                            Links currentancestor = ancestor.get(n);
-                            int indexofancestor = dagobj.indexOf(currentancestor);
-                            String check = currentinstance.stringValue(indexofancestor);
-                            if (check.equals("1")) {
-                                validinstance = true;
-                            }
-                        }
-                        if (validinstance) {
-                            tempdata[j].add(currentinstance);
-                        }
-
-
                     }
+//                    System.out.print(+"," );
 
 
                 }
@@ -265,30 +247,11 @@ public class hcc2 extends ProblemTransformationMethod
 //        for(int j : h_Chain) {
 //        System.out.println("dag size : "+dagobj.size());
 //        System.out.println("chain size : "+h_Chain.length);
-
-        y[0] = nodes[0].classify((Instance)x.copy(),y);
-        dagobj.get(0).flag=1;
-
-        for(int j=1;j<h_Chain.length;j++){
+        for(int j=0;j<h_Chain.length;j++){
             // h_j : x,pa_j -> y_j
-            Links currentnode= dagobj.get(j);
-            int checkpredict = 0;
-            for(int k=0; k < currentnode.pLink.size();k++){
-                int index = dagobj.indexOf( currentnode.pLink.get(k) );
-                if( y[index]>0.5  ){
-                    checkpredict=1;
-                }
-            }
-
-            if(checkpredict==1){
-                y[j] = nodes[j].classify((Instance)x.copy(),y);
-            }else{
-                y[j]=0;
-            }
-
-
+            y[j] = nodes[j].classify((Instance)x.copy(),y);
         }
-        System.out.println(Arrays.toString(y));
+
         return y;
     }
 
@@ -566,7 +529,7 @@ public class hcc2 extends ProblemTransformationMethod
             hierarchy.add(parts, i, 0);
         }
         ArrayList<Links> dag = hierarchy.getlist();
-//        hbr3 obj = new hbr3();
+//        hcc3 obj = new hcc3();
         dagobj = hierarchy.sortmindepth();
 
 //        for(Links a:dag){
@@ -575,11 +538,6 @@ public class hcc2 extends ProblemTransformationMethod
         System.out.println("dag size is :"+dagobj.size());
 
 
-        ProblemTransformationMethod.evaluation(new hcc2(), args);
-//        ProblemTransformationMethod.
-
-//        Evaluation evaluation = new Evaluation(trainInstances);
-//        evaluation.evaluateModel(scheme, testInstances);
-//        System.out.println(evaluation.toSummaryString());
+        ProblemTransformationMethod.evaluation(new hcc3(), args);
     }
 }

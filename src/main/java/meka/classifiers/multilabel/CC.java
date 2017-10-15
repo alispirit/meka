@@ -227,7 +227,7 @@ public class CC extends ProblemTransformationMethod
 	public double[] probabilityForInstance(Instance x, double path[]) throws Exception {
 		int L = x.classIndex();
 		double p[] = new double[L];
-
+		System.out.println("probabilityForInstance");
 		for(int j : m_Chain) {
 			// h_j : x,pa_j -> y_j
 			double d[] = nodes[j].distribution((Instance)x.copy(),path);  // <-- posterior distribution

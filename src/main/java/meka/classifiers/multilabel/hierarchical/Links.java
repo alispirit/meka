@@ -33,4 +33,7 @@ public class Links {
     public int mindepth() {
         return this.mindepth;
     }
+    public int maxdepth() {
+        return this.maxldepth;
+    }
 }

@@ -1,1 +1,1 @@
-java -cp "./target/sources/*" meka.classifiers.multilabel.hcc2  -t ./target/data/derisi/derisi.arff   > ./resault/hcc2_result.txt
+java -cp "./target/sources/*" meka.classifiers.multilabel.hcc -t ./target/data/datasets_GO/eisen_GO*/Folder/eisen_GO.arff   -verbosity 5 -x 10 > ./resault/eisen_GO_hcc_result.txt;
