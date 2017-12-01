@@ -42,7 +42,7 @@ import java.util.*;
  * @author	Jesse Read
  * @version December 2013
  */
-public class hcc3 extends ProblemTransformationMethod
+public class hcc4 extends ProblemTransformationMethod
         implements Randomizable, TechnicalInformationHandler, MultiLabelDrawable {
 
     private static final long serialVersionUID = -4115294965331340629L;
@@ -192,6 +192,15 @@ public class hcc3 extends ProblemTransformationMethod
                 tempdata[j] = new Instances(D);
                 mosbat = tempdata[j].numInstances();
             }else {
+                int holeplus=0;
+                for (int k = 0; k < numInstances; k++)// for all instances
+                {
+                    Instance currentinstance = D.instance(k);
+                    String node_class = currentinstance.stringValue(j);
+                    if (node_class.equals("1")){
+                        holeplus++;
+                    }
+                }
                 for (int k = 0; k < numInstances; k++)// for all instances
                 {
                     boolean validinstance = false;
@@ -313,7 +322,7 @@ public class hcc3 extends ProblemTransformationMethod
 
 
         }
-//        System.out.println(Arrays.toString(y));
+        System.out.println(Arrays.toString(y));
         return y;
     }
 
@@ -600,7 +609,7 @@ public class hcc3 extends ProblemTransformationMethod
         System.out.println("dag size is :"+dagobj.size());
 
 
-        ProblemTransformationMethod.evaluation(new hcc3(), args);
+        ProblemTransformationMethod.evaluation(new hcc4(), args);
 //        ProblemTransformationMethod.
 
 //        Evaluation evaluation = new Evaluation(trainInstances);

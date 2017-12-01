@@ -56,7 +56,7 @@ public class hcc2 extends ProblemTransformationMethod
     protected int m_Chain[] = null;
     protected int h_Chain[][] = null;//h_Chain[node number][chain contain]
     protected static ArrayList<Links> dagobj = new ArrayList<>();
-    protected static String hpath = "./target/data/datasets_GO/hierarchical.txt";
+    protected static String hpath = "./target/data/datasets_GO_5/hierarchical.txt";
     /**
      * Prepare a Chain. One of the following:<br>
      * - Use pre-set chain. If there is none, then <br>
@@ -288,7 +288,7 @@ public class hcc2 extends ProblemTransformationMethod
 
 
         }
-        System.out.println(Arrays.toString(y));
+//        System.out.println(Arrays.toString(y));
         return y;
     }
 

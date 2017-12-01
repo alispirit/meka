@@ -48,7 +48,7 @@ public class HBR2 extends ProblemTransformationMethod implements MultiLabelDrawa
     protected Classifier m_MultiClassifiers[] = null;
     protected Instances m_InstancesTemplates[] = null;
     protected static ArrayList<Links> dagobj = new ArrayList<>();
-    protected static String hpath = "./target/data/datasets_GO/hierarchical.txt";
+    protected static String hpath = "./target/data/datasets_GO_5/hierarchical.txt";
     /**
      * Description to display in the GUI.
      *
